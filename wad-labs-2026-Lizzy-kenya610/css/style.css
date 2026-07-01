@@ -1,0 +1,465 @@
+/* external css */
+/* element selectors*/
+input {
+    width: 100%;
+
+}
+
+/* id selectors*/
+
+
+/* class selector*/
+.form-group {
+    width: 100%;
+
+}
+
+body {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    background-color: whitesmoke;
+    /* shorthand*/
+    margin: 0;
+    line-height: 1.7;
+}
+
+h1,
+h2 {
+    font-family: 'Young Serif', serif;
+
+}
+
+header {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: cyan;
+    text-align: center;
+
+}
+
+/* various ways of selecting the main heading (h1) given the html code
+h1 (element)
+#mainHeading (id)
+.headings (class)
+header h1 (descendant selector - all elements within another)
+*/
+
+header h1 {
+    /* CSS UNITS
+    1. Absolute (fixed sizes)
+    2. Relative (change based on another value)
+    
+    */
+
+    font-size: 3.5em;
+    /* this is relative to parent font size = 3.5 x 16px*/
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: coral;
+    margin-left: 8px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    font-weight: normal;
+
+
+}
+
+/* direct child selector*/
+header>b {
+    color: orangered;
+    letter-spacing: 2px;
+    font-size: 0.95 em
+        /*relative to parent font size*/
+
+}
+
+nav {
+    margin-top: 10px;
+
+}
+
+/*descendant selector*/
+nav ul {
+    list-style: none;
+    padding: 0;
+    /*affecting top, bottom, left and right*/
+    margin: 0;
+    /*affecting top, bottom, left and right*/
+    /* change display to flex*/
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+/* what selector is this */
+/*other way to select a tag in this case*/
+
+nav ul li a {
+    color: rgb(5, 5, 93);
+    text-decoration: none;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    /*box model styles*/
+    padding: 8px 18px;
+    /* top: 8px
+bottom: 8px
+left: 18px
+right: 18px 
+*/
+    border: 1px solid cyan;
+    /*long hand border rule
+border-width: 1px
+border-style: solid
+border-color: cyan
+*/
+
+    border-radius: 8px;
+
+
+}
+
+/*pseudo-class selectors: hover, :root*/
+nav ul li a:hover {
+    background-color: cyan;
+    border-color: rgb(203, 149, 158);
+
+}
+
+main {
+    /* responsive width 0-960 px*/
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 32px;
+    background-color: rgb(80, 85, 89);
+    border-radius: 8px;
+    border-left-style: solid;
+    border-color: coral;
+    border-left-width: 7px;
+    transition-property: border-color;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    /* shorthand
+    transition: border-color 2s ease;
+    */
+
+
+}
+
+section:hover {
+    border-left-color: cyan;
+
+}
+
+p,
+h4 {
+    color: whitesmoke;
+
+}
+
+h5 {
+    color: rgb(245, 136, 97);
+}
+
+main b {
+    color: coral;
+    ;
+
+}
+
+main i {
+    color: cyan;
+}
+
+h2 {
+    color: rgb(255, 119, 70);
+    border-bottom: 2px solid rgb(250, 175, 148);
+    /* longer version
+    border-bottom-color: rgb(237, 181, 77);
+    border-bottom-style: solid;
+    border-bottom-width:1px;
+    */
+
+
+}
+
+main ul,
+main ol {
+    padding-left: 24px;
+    color: whitesmoke;
+}
+
+main li {
+    margin-left: 4px;
+
+}
+
+/*pseudo class selector (state - position, hover, focus) */
+section li:first-child {
+    color: pink;
+    font-weight: bold;
+}
+
+/*pseudo-element selector (part of an element)*/
+main ul li::marker {
+    color: cyan;
+
+}
+
+main ol li::marker {
+    color: coral;
+}
+
+img {
+    max-width: 100%;
+    /* parent */
+    border-radius: 11px;
+}
+
+footer {
+    text-align: center;
+}
+
+footer p {
+    color: rgb(133, 160, 137);
+}
+
+hr {
+    border: 1px solid cyan;
+}
+
+/*characters grid*/
+.characters-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+article h4 {
+    border-bottom: 2px solid coral;
+}
+
+main {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* ============================================================
+   RESPONSIVE BREAKPOINT RANGES
+   ------------------------------------------------------------
+   Small Mobile  :   0px   → 480px
+   Large Mobile  : 481px   → 600px
+   Tablet        : 601px   → 768px
+   Small Laptop  : 769px   → 1023px
+   Desktop       : 1024px  → 1279px
+   Wide Screens  : 1280px and above
+ 
+   Media queries allow CSS styles to change depending
+   on the screen size or device characteristics.
+   ============================================================ */
+
+
+/* All Mobile Devices*/
+@media screen and (max-width: 730px) {
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul li a {
+        display: block;
+
+    }
+
+}
+
+
+/* Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {}
+
+
+/* Small Laptops */
+@media screen and (min-width: 769px) and (max-width: 1023px) {}
+
+
+/* Desktop Screens */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {}
+
+
+/* Wide Screens */
+@media screen and (min-width: 1280px) {}
+
+
+    *{
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.tagline {
+    color: grey;
+    margin: 0 10px 10px;
+}
+
+nav ul {
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: inline-block;
+}
+
+img {
+    display: block;
+}
+
+.section-highlight {
+    border-left-color: cyan !important;
+    box-shadow: 0 0 18px rgba(0, 213, 216, 0.35);
+}
+
+p,
+h4,
+label,
+code {
+    color: beige;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.lab-card {
+    background-color: rgba(8, 19, 31, 0.65);
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(79, 246, 234, 0.25);
+}
+
+button {
+    background-color: orangered;
+    color: beige;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 6px 4px 6px 0;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: orangered;
+    color: var(--col-bg-deep);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0 14px;
+    border: 2px solid var cyan;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+.dynamic-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.dynamic-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(8, 19, 31, 0.65);
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.delete-btn {
+    background-color: grey;
+    border: 1px solid orangered;
+}
+
+.output-box {
+    margin-top: 18px;
+    padding: 16px;
+    background-color: rgba(8, 19, 31, 0.65);
+    color: beige;
+    border-radius: 8px;
+    border: 1px solid cyan;
+}
+
+.success-text {
+    color: cyan;
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Update your existing mobile media query with these additions */
+@media screen and (max-width: 730px) {
+    .lab-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2.1em;
+        letter-spacing: 3px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row button {
+        width: 100%;
+    }
+
+    .dynamic-list li {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

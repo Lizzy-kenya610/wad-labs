@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Grid Demo</title>
+
+    <style>
+        body {
+            margin: 0;
+            /* viewport height (relative)*/
+            height: 100vh;
+            font-size: 24px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 100px 1fr 100px;
+            grid-template-rows: 80px 1fr 40px;
+            grid-template-areas:
+                "header header header"
+                "l-aside main r-aside"
+                "footer footer footer";
+            gap: 8px;
+            padding: 8px;
+
+        }
+
+        header {
+            grid-area: header;
+            background: pink;
+        }
+
+        #left-aside {
+            grid-area: l-aside;
+            background: green;
+
+
+        }
+
+        main {
+            grid-area: main;
+            background: blue;
+            height: 79vh;
+        }
+
+        #right-aside {
+            grid-area: r-aside;
+            background: purple;
+        }
+
+        footer {
+            grid-area: footer;
+            background: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <!--gid container-->
+    <div class="container">
+        <header>Header</header>
+        <aside id="left-aside">Left Aside</aside>
+        <main> Main</main>
+        <aside id="right-aside">Right Aside</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+
+</html>

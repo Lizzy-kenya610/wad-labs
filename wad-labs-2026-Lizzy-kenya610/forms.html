@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML Forms 101</title>
+    <!-- link to external stylesheet-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <section id="simple-form">
+        <h2>Simple Form</h2>
+
+        <form method="get">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+
+            <label for="opinion">Opinion</label>
+            <textarea name="opinion" id="opinion"></textarea>
+
+            <input type="submit" value="submit form">
+        </form>
+    </section>
+
+    <section id="registration">
+        <h2>Registration</h2>
+
+        <form id="reg-form" name="reg-form" method="get" action="post.php">
+
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" id="fname">
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" id="lname">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+            </div>
+
+            <div class="form-group">
+                <label for="national_id">National ID</label>
+                <input type="text" name="national_id" id="national_id">
+            </div>
+
+            <div class="form-group">
+                <label>Gender </label>
+                <input type="radio" name="gender" value="male">Male
+                <br>
+                <input type="radio" name="gender" value="female">Female
+            </div>
+
+            <div class="form-group">
+                <label>Age</label>
+                <input type="radio" name="age" value="under18">Under 18
+                <br>
+                <input type="radio" name="age" value="above18">Above 18
+            </div>
+
+            <div class="form-group">
+                <label id="participant_type">Participant type</label>
+                <input type="radio" name="participant_type" value="spectator">Spectator
+                <br>
+                <input type="radio" name="participant_type" value="racer">Racer
+            </div>
+
+            <div class="form-group">
+                <label>Post race snacks</label>
+                <input type="checkbox" name="snacks[]" value="watermelon">watermelon
+                <br>
+                <input type="checkbox" name="snacks[]" value="banana">banana
+            </div>
+            <div class="form-group">
+                <label id="university"> University</label>
+                <select id="university" name="university">
+                    <option value=" "> -- please select --</option>
+                    <option value="Strathmore University"> Strathmore University</option>
+                    <option value="UON "> UON </option>
+                    <option value="JKUAT "> JKUAT</option>
+                    <option value="University of Embu "> University of Embu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="submit" id="submit">
+                <input type="reset" name="reset" id="return" value="return">
+            </div>
+
+        </form>
+    </section>
+
+</body>
+
+</html>
